@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+           id="org.apache.cordova.core.vibration"
+      version="0.1.0">
+
+    <name>Vibration</name>
+    <description>Cordova Vibration Plugin</description>
+    <license>Apache</license>
+    <keywords>cordova,vibration</keywords>
+
+    <js-module src="www/vibration.js" name="notification">
+        <merges target="navigator.notification" />
+    </js-module>
+        
+    <!-- firefoxos -->
+    <platform name="firefoxos">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Vibration">
+                <param name="firefoxos-package" value="Vibraton" />
+            </feature>
+        </config-file>                                         
+        
+        <source-file src="src/firefoxos/vibration.js" />
+        
+    </platform>
+
+</plugin>
